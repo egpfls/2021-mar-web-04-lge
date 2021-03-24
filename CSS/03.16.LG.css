@@ -1,31 +1,84 @@
 @import './lge-font.css';
 
 html, body {font-family: 'LGSmHaR'; font-size: 14px; letter-spacing: -1px;}
-.wrapper {max-width: 1600px; margin: auto; padding: 0 30px;}
+.wrapper {max-width: 1600px; margin: auto; padding: 0 2rem; }
+.wrapper2 {max-width: 1300px; margin: auto; padding: 0 2rem;}
 
+.disp_table {display: table;}
+.disp_cell {display: table-cell; text-align: center; vertical-align: middle;}
+
+/************************** .header_wrapper *******************************/
 .header_wrapper{}
-	.header_wrapper .top_wrapper {background-color: #333; padding: 20px 0 8px 0;}
-		.top_wrapper ul.top_wrap {float: right;padding: 6px 16px; background-color: #ae1a4a;border-radius: 13px; }
+	.top_wrapper {background-color: #333; padding: 1.5em 0  0.625em 0;}
+		.top_wrapper ul.top_wrap {float: right; padding: 0.5em 0.875em; background-color: #ae1a4a; border-radius: 1.25em; }
 		.top_wrapper ul.top_wrap li {float: left; color: #f8f8f8}
-		.top_wrapper ul.top_wrap li:nth-child(2) { margin: 0 12px; opacity: .5;}
+		.top_wrapper ul.top_wrap li:nth-child(2) { margin: 0 0.875em; opacity: .5;}
 
-		.header_wrapper .navi_wrapper {background-color: #333; position: relative;}
-			.navi_wrapper .logo {float:left; width: 164px; height: 43px; background: url('../img/Common.png'); }
-				.navi_wrapper .logo a {display: inline-block; width: 100%; height: 100%}
+	.navi_wrapper {background-color: #333; position: relative; z-index: 3;padding-top: 0.75em;}
+		.navi_wrapper .logo { width: 164px; height: 43px; float:left; background:url('../img/Common.png'); }
+			.navi_wrapper .logo a {display: inline-block; width: 100%; height:100%}
+			/* a 태그는 inline width와 height를 가질 수 없다.*/
+			.navi_wrapper .navi_wrap {float: right; color: #f8f8f8; font-size: 1.25rem; display: none;}
+			.navi_wrapper .mb_navi_wrap {float: right; color: #f8f8f8; font-size: 1.75rem; padding: 0.5em 0 0.75em 0; cursor: pointer;}
+			.navi_wrapper .navi {float: left; padding: 0.875em 0.75em 1.75em 0.75em; height: 63px;}
+		.navi_wrapper .navi_wrap > .navi:hover { background-color: #ccc;}
+		.navi_wrapper .navi_wrap > .navi:hover > a {color: #333;}
+		.navi_wrapper .navi:hover > .sub_wrapper {z-index: 2; height: 320px;}
+		.navi_wrapper .navi:last-child > span {opacity: .5;}
 
-			.navi_wrapper .navi_wrap {float: right; color: #f8f8f8; font-size: 18px;}
-			.navi_wrapper .navi_wrap .navi {float: left; padding: 16px 14px 30px 14px; height: 66px;}
-			.navi_wrap .navi .sub-wrap {position: absolute; top: 66px; left: 0; width: 100%; height: 0; background-image: linear-gradient(#ccc, #f1f1f1); transition: height 0.35s; overflow: hidden; z-index: 1; color: #333;}
-			.navi_wrapper .navi_wrap .navi:hover {background-color: #ccc;}
-			.navi_wrapper .navi_wrap .navi:hover > a {color: #333;}
-			.navi_wrapper .navi_wrap .navi:hover > .sub-wrap {z-index: 2; height: 300px;}
+		.sub_wrapper {position: absolute; top: 63px; left: 0; width: 100%; height: 0; background-image: linear-gradient(#ccc, #f1f1f1); transition: height 0.35s; overflow: hidden; z-index: 1; box-shadow: 0 6px 6px rgba(0, 0, 0, .6);}
+		.sub_wrapper > .wrapper2 {height: 100%; padding: 1.5% 0; }
+		.sub_wrapper > .wrapper2 > div{float: left; height: 100%; color: #333;}
+		.sub_wrapper > .wrapper2 > div.sub_title{width: 25%; text-align: center;}
+		.sub_wrapper > .wrapper2 > div.sub_wrap{width: 75%;}
+		
+		.sub_wrapper .sub_title h2 {font-size: 0.875em; line-height: 1.75;}
+		.sub_wrapper .sub_title  h2 span {font-size: 1.25em; color: #ae1a4a;}
+		.sub_wrapper .sub_title:hover a {text-decoration: underline;}
 
-			.navi_wrapper .navi_wrap .navi:last-child > span {opacity: .5;}
-			.navi_wrapper .navi_wrap .navi .sub-wrap {float: right;}
-				.navi_wrap .navi .sub-wrap .menu_wrap{float: left; padding: 0 150px; margin-top: 50px;}
-				.navi_wrap .navi .sub-wrap .menu_wrap .b {color: #a50034;}
-					.navi .sub-wrap .menu_wrap .unit {float: right;}
-					.navi_wrap .navi .sub-wrap .menu_wrap:hover {text-decoration: underline;}
+		.sub_wrapper .sub_wrap > div {border-left: 1px solid #bbb; float: left; height: 100%; padding: 0 1.25%;}
+		.sub_wrapper .sub_signature > div {width: 33.3333%;}
+		.sub_wrapper .sub_tv > div {width: 25%;}
+		.sub_wrapper .sub_gram > div {width: 25%;}
+		.sub_wrapper .sub_phone > div {width: 25%;}
+		.sub_wrapper .sub_pral > div {width: 25%;}
+		.sub_wrapper .sub_kitchen > div {width: 20%;} 
+		.sub_wrapper .sub_air > div {width: 20%;} 
+		.sub_wrapper .sub_app > div {width: 16.5%;}
 
+		.sub_wrapper .sub_navi {padding: 0.75em 0; line-height: 1.25;}
+		.sub_wrapper .sub_navi:first-child  {padding: 0 0 0.75em 0;}
+		.sub_wrapper .sub_navi::after {display: inline-block; content: '＞'; color: #ae1a4a; padding-left: 0.25em;}
+		.sub_wrapper .sub_bookmark {margin: 1em 0;}
+		.sub_wrapper .sub_bookmark::after {display: inline-block; content: ' ';  margin-left:  0.5em; width: 13px; height: 18px; background: url('../img/Common.png') no-repeat 0 -50px; vertical-align: bottom;}
+		.sub_wrapper .sub_mt {margin: 1em 0;}
 
-	.header_wrapper .navi_wrapper2 {background-color: #ae1a4a;}
+		.sub_wrapper .sub_prd {font-size: 0.8em; padding: 0.25em 0;}
+		.sub_wrapper .sub_prd a:hover {text-decoration: underline;}
+		.sub_wrapper .sub_prd > ul {padding: 0.5em 0;}
+		.sub_wrapper .sub_prd > ul > .prd {font-size: 1.05em; color: #121212; float: left;}
+		.sub_wrapper .sub_prd > ul > .prd::before {display: inline-block; content: '·'; padding: 0 0.25em 0 0.75em;}
+
+		.navi_wrapper2 {background-color: #ae1a4a;}
+
+		
+/************************** 반응형 *******************************/
+@media (min-width: 576px){
+	
+}
+@media (min-width: 764px){
+
+}
+@media (min-width: 992px){
+
+}
+@media (min-width: 1200px){
+
+}
+@media (min-width: 1400px){
+	.navi_wrapper .navi_wrap {display: block;}
+	.navi_wrapper .mb_navi_wrap {display: none;} 
+}
+@media (min-width: 1600px){
+
+}
