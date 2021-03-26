@@ -1,45 +1,50 @@
-$(".main-wrapper .pager-wrapper a.pager").click(function(){
-	$(".main-wrapper .pager-wrapper a.pager").removeClass('active')
+$(".main_wrapper .pager_wrapper a").click(function(e){
+	e.preventDefault();
+	$(".main_wrapper .pager_wrapper a.pager").removeClass('active')
 	$(this).addClass('active')
+});
+
+$(".main_wrapper .pager_wrapper .bt_play").click(function(e){
+	e.preventDefault();
+	$(".main_wrapper .pager_wrapper .bt_play").addClass('active')
+	$(".main_wrapper .pager_wrapper .bt_pause").removeClass('active')
 })
 
-$(".main-wrapper .pager-wrapper .bt-play").click(function(){
-	$(".main-wrapper .pager-wrapper .bt-play").addClass('active')
-	$(".main-wrapper .pager-wrapper .bt-pause").removeClass('active')
+$(".main_wrapper .pager_wrapper .bt_pause").click(function(e){
+	e.preventDefault();
+	$(".main_wrapper .pager_wrapper .bt_play").removeClass('active')
+	$(".main_wrapper .pager_wrapper .bt_pause").addClass('active')
 })
 
-$(".main-wrapper .pager-wrapper .bt-play").click(function(){
-	$(".main-wrapper .pager-wrapper .bt-play").removeClass('active')
-	$(".main-wrapper .pager-wrapper .bt-pause").addClass('active')
-})
-
-// $(".best-wrapper .pager-wrapper a.pager").click(function(e){
+// $(".best_wrapper .pager_wrapper a").click(function(e){
 // 	e.preventDefault();
-// 	$(".best-wrapper .pager-wrapper a.pager").removeClass('active')
+// 	$(".best_wrapper .pager_wrapper a.pager").removeClass('active')
 // 	$(this).addClass('active')
-// })
+// });
 
-var swiperMain = new Swiper('.main-wrapper .swiper-container', {
+var swiperMain = new Swiper('.main_wrapper .swiper-container', {
 	navigation: {
-		nextEl: '.main-wrapper .bt-next',
-		prevEl: '.main-wrapper .bt-prev',
+		nextEl: '.main_wrapper .bt_next',
+		prevEl: '.main_wrapper .bt_prev',
 	},
 	pagination: {
-		el: '.main-wrapper .swiper-pagination',
+		el: '.main_wrapper .swiper-pagination',
 		clickable: true
-	}
+	},
+
 })
-var swiperBest = new Swiper('.best-wrapper .swiper-container', {
+
+var swiper = new Swiper('.best_wrapper .swiper-container', {
 	slidesPerView: 1,
 	slidesPerGroup: 1,
 	spaceBetween: 0,
 	loop: true,
 	navigation: {
-		nextEl: '.best-wrapper .bt-next',
-		prevEl: '.best-wrapper .bt-prev',
+		nextEl: '.best_wrapper .bt_next',
+		prevEl: '.best_wrapper .bt_prev',
 	},
 	pagination: {
-		el: '.best-wrapper .swiper-pagination',
+		el: '.best_wrapper .swiper-pagination',
 		clickable: true
 	},
 	breakpoints: {
