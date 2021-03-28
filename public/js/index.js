@@ -1,3 +1,13 @@
+$(window).scroll(function(){
+	var sct = $(this).scrollTop()
+	if(sct > 200) $('aside.bt_top').addClass('active')
+	else $('aside.bt_top').removeClass('active')
+})
+
+function topAni() {
+	$('html, body').stop().animate({'scrollTop': 0}, 300)
+}
+
 $(".main_wrapper .pager_wrapper a").click(function(e){
 	e.preventDefault();
 	$(".main_wrapper .pager_wrapper a.pager").removeClass('active')
